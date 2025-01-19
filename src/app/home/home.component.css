@@ -1,0 +1,41 @@
+.container {
+  margin: 0 auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #2965a0;
+  color: white;
+}
+
+.form-control {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.buttonEdit {
+  cursor: pointer;
+  border-radius: 2rem;
+}
+.buttonSave {
+  cursor: pointer;
+  background-color: #b3e4b9;
+  border-radius: 2rem;
+}
+
+.form-control[readonly] {
+  border: none;
+  cursor: not-allowed;
+}

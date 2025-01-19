@@ -1,0 +1,43 @@
+<div class="container">
+  <form [formGroup]="userForm">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="displayData">
+        <tr *ngFor="let userControl of usersFormArray.controls; let i = index">
+          <td>
+            <input type="text" [readonly]="true" [formControl]="getFormControl(userControl, 'id')"
+              class="form-control" />
+          </td>
+          <td>
+            <input type="text" [formControl]="getFormControl(userControl, 'name')" [readonly]="editingIndex !== i"
+              class="form-control" />
+          </td>
+          <td>
+            <input type="email" [formControl]="getFormControl(userControl, 'email')" [readonly]="editingIndex !== i"
+              class="form-control" />
+          </td>
+          <td>
+            <input type="text" [formControl]="getFormControl(userControl, 'username')" [readonly]="editingIndex !== i"
+              class="form-control" />
+          </td>
+          <td>
+            <button *ngIf="editingIndex !== i" (click)="editRow(i)" class="buttonEdit">
+              Edit
+            </button>
+            <button *ngIf="editingIndex === i" (click)="saveRow(i)" class="buttonSave">
+              Save
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
