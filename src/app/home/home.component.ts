@@ -26,9 +26,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
       this.store.pipe(select(selectUsers)).subscribe((users) => {
-      const hpSettingConf = users;
-      if (hpSettingConf && hpSettingConf.length>0) {
-        let newdata = hpSettingConf;
+      const fetchedUsers = users;
+      if (fetchedUsers && fetchedUsers.length>0) {
+        let newdata = fetchedUsers;
         this.users=newdata;
         this.initializeForm();
     } else {
